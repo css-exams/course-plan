@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>نسبة تنفيذ الخطة الدراسية | كلية العلوم الشرعية</title>
+<style>
+:root{font-family:Tahoma,Arial,sans-serif;color:#172e28;background:#f3f6f3;line-height:1.65;--green:#164e3e;--muted:#455952;--line:#bccbc3}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{width:min(100% - 2rem, 58rem);margin-inline:auto}
+header{background:var(--green);color:#fff;padding:2.6rem 0 2.8rem;border-block-end:5px solid #c7a768}
+.brand{margin:0;color:#e4eee6;font-size:.95rem}
+h1{font-size:clamp(1.65rem,5vw,2.55rem);line-height:1.35;margin:.45rem 0}
+header p{margin:.4rem 0 0}
+main{padding-block:1.5rem 3rem}
+.summary{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.summary div{background:#fff;padding:.9rem 1.1rem}
+.summary strong,.summary span{display:block}
+.summary strong{color:var(--green);font-size:1.2rem}
+.summary span,small{color:var(--muted)}
+details{margin:1rem 0;padding:.65rem 1rem;background:#e9f0eb;border-radius:10px}
+summary{cursor:pointer;font-weight:bold}
+ul{padding-inline-start:1.3rem}
+form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(1rem,4vw,2rem)}
+h2{font-size:1.35rem;margin:0 0 .2rem}
+.required{color:#8c3526}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.wide{grid-column:1/-1}
+label{display:block;font-weight:bold;margin-block-end:.27rem}
+input,select,textarea,button{font:inherit}
+input,select,textarea{display:block;width:100%;min-width:0;min-height:46px;color:inherit;background:#fff;border:1px solid #788f82;border-radius:8px;padding:.55rem .7rem}
+textarea{resize:vertical}
+small{display:block;margin:.25rem 0}
+button{min-height:46px;padding:.55rem 1.3rem;border:0;border-radius:8px;background:var(--green);color:white;font-weight:bold;cursor:pointer}
+button:disabled{opacity:.65;cursor:default}
+:focus-visible{outline:3px solid #28684c;outline-offset:3px}
+#status:not(:empty){background:#fff5db;padding:.65rem .8rem;border-radius:8px}
+footer{margin-top:1.25rem;color:var(--muted);font-size:.9rem}
+@media(max-width:600px){.grid{grid-template-columns:minmax(0,1fr)}header{padding:1.8rem 0}.summary strong{font-size:1rem}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<p class="brand">كلية العلوم الشرعية</p>
+<h1>نسبة تنفيذ الخطة الدراسية للمقرر</h1>
+<p>حتى نهاية الأسبوع العاشر · ربيع 2024</p>
+</div>
+</header>
+<main class="wrap">
+<section class="summary" aria-label="بيانات المتابعة">
+<div><span>النسبة المتوقعة حتى الأسبوع العاشر</span><strong>66% تقريبًا</strong></div>
+<div><span>آخر موعد في النموذج الأصلي</span><strong>الأحد 21 أبريل 2024</strong></div>
+</section>
+<details open>
+<summary>تعليمات تعبئة الاستمارة</summary>
+<ul>
+<li>يُفضّل إدخال بريد كلية العلوم الشرعية. تُرسل نسخة من البيانات إلى البريد الذي تدخله.</li>
+<li>إذا كنت تُدرّس أكثر من مقرر، فعبّئ استمارة مستقلة لكل مقرر.</li>
+<li>تُحسب النسبة من جملة مفردات المقرر. تمثل نسبة 100% تنفيذ المقرر كاملًا.</li>
+</ul>
+</details>
+<form id="report" method="post" accept-charset="UTF-8" aria-labelledby="form-title">
+<h2 id="form-title">بيانات المقرر والتنفيذ</h2>
+<p><small>الحقول المعلّمة بنجمة إلزامية.</small></p>
+<div class="grid">
+<div><label for="lecturer">أستاذ المقرر <span class="required" aria-hidden="true">*</span></label><input id="lecturer" name="lecturer" maxlength="160" autocomplete="name" required></div>
+<div><label for="email">البريد الإلكتروني <span class="required" aria-hidden="true">*</span></label><input id="email" name="email" type="email" dir="ltr" maxlength="254" autocomplete="email" required></div>
+<div><label for="department">القسم <span class="required" aria-hidden="true">*</span></label><select id="department" name="department" required><option value="">اختر القسم</option><option>أصول الدين</option><option>الفقه وأصوله</option><option>المتطلبات العامة</option></select></div>
+<div><label for="date">التاريخ <span class="required" aria-hidden="true">*</span></label><input id="date" name="date" type="date" required></div>
+<div class="wide">
+<label for="course-search">البحث في المقررات</label>
+<input id="course-search" type="search" aria-controls="course" placeholder="اكتب اسم المقرر أو رمزه">
+<small id="course-count" role="status"></small>
+<label for="course">اسم المقرر <span class="required" aria-hidden="true">*</span></label>
+<select id="course" name="course" required><option value="">اختر المقرر</option>
+<option value="1">ص.د2101 - القرآن الكريم 1</option>
+<option value="2">ص.د2102 - القرآن الكريم 2</option>
+<option value="3">ص.د2103 - القرآن الكريم 3</option>
+<option value="4">ص.د2104 - القرآن الكريم 4</option>
+<option value="5">ص.د2105 - القرآن الكريم 5</option>
+<option value="6">ص.د2106 - القرآن الكريم 6</option>
+<option value="7">ص.د2107 - القرآن الكريم 7</option>
+<option value="8">ص.د2108 - القرآن الكريم 8</option>
+<option value="9">ص.د2210 - التجويد 1</option>
+<option value="10">ص.د2220 - التجويد 2</option>
+<option value="11">ص.د2310 - علوم القرآن</option>
+<option value="12">ص.د2410 - علوم الحديث</option>
+<option value="13">ص.د2510 - العقيدة 1</option>
+<option value="14">ص.د2511 - أركان الإيمان</option>
+<option value="15">ص.د2520 - العقيدة 2</option>
+<option value="16">ص.د2521 - قضايا عقدية</option>
+<option value="17">ص.د2550 - الأخلاق الإسلامية</option>
+<option value="18">ص.د2630 - الخطابة العملية</option>
+<option value="19">ص.د2670 - الخطابة وفن التبليغ</option>
+<option value="20">ص.د3320 - مدارس التفسير</option>
+<option value="21">ص.د3330 - مناهج المفسرين</option>
+<option value="22">ص.د3360 - تفسير آيات الأحكام</option>
+<option value="23">ص.د3370 - الإعجاز القرآني</option>
+<option value="24">ص.د3426 - التخريج وعلم الرجال</option>
+<option value="25">ص.د3461 - أحاديث الأحكام</option>
+<option value="26">ص.د3466 - أحاديث الأحكام في المعاملات والجنايات</option>
+<option value="27">ص.د3481 - السيرة النبوية 1</option>
+<option value="28">ص.د3482 - السيرة النبوية 2</option>
+<option value="29">ص.د3486 - فقه السيرة النبوية</option>
+<option value="30">ص.د3530 - العقيدة 3</option>
+<option value="31">ص.د3560 - مقارنة الأديان</option>
+<option value="32">ص.د3610 - منهج الدعوة عند الإباضية</option>
+<option value="33">ص.د3620 - المهارات الخطابية</option>
+<option value="34">ص.د3621 - الخطابة</option>
+<option value="35">ص.د3640 - مهارات الاتصال</option>
+<option value="36">ص.د4230 - إتقان التلاوة</option>
+<option value="37">ص.د4250 - علم القراءات</option>
+<option value="38">ص.د4340 - التفسير الموضوعي</option>
+<option value="39">ص.د4350 - التفسير التحليلي</option>
+<option value="40">ص.د4421 - التخريج ودراسة الأسانيد1</option>
+<option value="41">ص.د4422 - التخريج ودراسة الأسانيد 2</option>
+<option value="42">ص.د4430 - مناهج المحدثين</option>
+<option value="43">ص.د4440 - مصطلح ورجال</option>
+<option value="44">ص.د4451 - الحديث التحليلي</option>
+<option value="45">ص.د4452 - الحديث الموضوعي</option>
+<option value="46">ص.د4540 - علم الكلام</option>
+<option value="47">ص.د4660 - الدعوة والإعلام</option>
+<option value="48">ص.د.3590 - التيارات الفكرية المعاصرة</option>
+<option value="49">ف.ص2210 - فقه العبادات 1</option>
+<option value="50">ف.ص2220 - فقه العبادات 2</option>
+<option value="51">ف.ص2230 - فقه العبادات 3</option>
+<option value="52">ف.ص2820 - تاريخ التشريع الإسلامي</option>
+<option value="53">ف.ص2840 - ضوابط الفتوى وآداب المفتي</option>
+<option value="54">ف.ص2850 - فقه الدعوة</option>
+<option value="55">ف.ص2860 - فقه السياسة الشرعية</option>
+<option value="56">ف.ص2870 - الفقه المقارن وأسباب الاختلاف</option>
+<option value="57">ف.ص3301 - فقه الأسرة</option>
+<option value="58">ف.ص3302 - فقه الأسرة</option>
+<option value="59">ف.ص3310 - فقه الأسرة مقارنا بقانون الأحوال الشخصية العماني 1</option>
+<option value="60">ف.ص3401 - فقه المعاملات</option>
+<option value="61">ف.ص3410 - فقه المعاملات مقارنا بالقانون1</option>
+<option value="62">ف.ص3520 - نظام القضاء مقارنا بقانون السلطة القضائية</option>
+<option value="63">ف.ص3530 - التوثيق الكتابي وطرق الإثبات</option>
+<option value="64">ف.ص3601 - الميراث والوصية والوقف</option>
+<option value="65">ف.ص3620 - الوصية والوقف</option>
+<option value="66">ف.ص3701 - أصول الفقه</option>
+<option value="67">ف.ص3710 - أصول الفقه 1</option>
+<option value="68">ف.ص3720 - أصول الفقه 2</option>
+<option value="69">ف.ص3760 - مقاصد الشريعة</option>
+<option value="70">ف.ص3810 - القواعد الفقهية</option>
+<option value="71">ف.ص3830 - القضايا الفقهية المعاصرة</option>
+<option value="72">ف.ص3901 - المرافعات العملية</option>
+<option value="73">ف.ص3931 - قانون العمل العماني مقارنا بالفقه الإسلامي</option>
+<option value="74">ف.ص3940 - قانون الإجراءات المدنية العماني</option>
+<option value="75">ف.ص3950 - قانون الإجراءات الجزائية العماني</option>
+<option value="76">ف.ص4320 - فقه الأسرة مقارنا بقانون الأحوال الشخصية العماني 2</option>
+<option value="77">ف.ص4420 - فقه المعاملات مقارنا بالقانون 2</option>
+<option value="78">ف.ص4430 - فقه المعاملات مقارنا بالقانون3</option>
+<option value="79">ف.ص4460 - مدخل الاقتصاد الإسلامي</option>
+<option value="80">ف.ص4470 - الصيرفة الإسلامية</option>
+<option value="81">ف.ص4510 - الفقه الجنائي مقارنا بالقانون الجزائي العماني</option>
+<option value="82">ف.ص4610 - الميراث</option>
+<option value="83">ف.ص4730 - أصول الفقه 3</option>
+<option value="84">ف.ص4750 - التعارض والاجتهاد</option>
+<option value="85">ف.ص4910 - مدخل العلوم القانونية</option>
+<option value="86">ف.ص4921 - القانون الدستوري العماني مقارنا بالفقه الإسلامي</option>
+<option value="87">ف.ص4922 - القانون الإداري العماني مقارنا بالفقه الإسلامي</option>
+<option value="88">ف.ص4923 - القانون الجزائي العُماني (النظرية العامة)</option>
+<option value="89">ف.ص4932 - قانون الشركات العماني مقارنا بالفقه الإسلامي</option>
+<option value="90">م.ع1310 - النحو الوظيفي 1</option>
+<option value="91">م.ع1320 - النحو الوظيفي 2</option>
+<option value="92">م.ع1330 - المهارات اللغوية</option>
+<option value="93">م.ع2110 - مناهج البحث العلمي</option>
+<option value="94">م.ع2310 - النحو 1</option>
+<option value="95">م.ع2380 - التطبيقات اللغوية</option>
+<option value="96">م.ع2410 - اللغة الإنجليزية 1</option>
+<option value="97">م.ع2420 - اللغة الإنجليزية 2</option>
+<option value="98">م.ع2510 - ريادة الأعمال</option>
+<option value="99">م.ع3210 - تاريخ عمان والحضارة الإسلامية</option>
+<option value="100">م.ع3320 - النحو 2</option>
+<option value="101">م.ع3330 - النحو 3</option>
+<option value="102">م.ع3360 - الصرف</option>
+<option value="103">م.ع3370 - البلاغة</option>
+<option value="104">م.ع3380 - الأدب الإسلامي</option>
+<option value="105">م.ع3520 - التربية في الإسلام</option>
+<option value="106">م.ع3530 - مدخل إلى علم النفس</option>
+<option value="107">م.ع3580 - المنطق وطرائق التفكير</option>
+<option value="108">المسلمون والعالم المعاصر</option>
+<option value="109">ص.د6340 الحديث التحليلي</option>
+<option value="110">ص.د6240 التفسير الموضوعي (متقدم)</option>
+<option value="111">ص.د6310 دراسات معاصرة في السنة</option>
+<option value="112">ص.د6430 علم الكلام (الإلهيات)</option>
+<option value="113">ص.د6410 أصول الدعوة ومناهجها</option>
+<option value="114">ص.د6210 دراسات في علوم القرآن</option>
+<option value="115">ص.د6220 قواعد التفسير</option>
+<option value="116">ص.د6230 اتجاهات في التفسير</option>
+<option value="117">ص.د6320 مناهج المحدثين</option>
+<option value="118">ص.د6330 دراسة الأسانيد</option>
+<option value="119">ص.د6420 دراسات نصية في كتب العقيدة</option>
+<option value="120">ص.د6410 العقيدة في القرآن والسنة</option>
+<option value="121">ص.د6440 المذاهب الفكرية المعاصرة</option>
+<option value="122">ع.ش6410 مناهج البحث في العلوم الشرعية</option>
+<option value="123">ع.ش6110 توصيف مقرر الإعجاز التشريعي</option>
+<option value="124">ع.ش6500 رسالة الماجستير</option>
+<option value="125">ف.ص6310 أصول الفقه (الدلالات)</option>
+<option value="126">ف.ص6220 قضايا فقهية اقتصادية معاصرة</option>
+<option value="127">ف.ص6320 الأدلة التبعية</option>
+<option value="128">ف.ص6360 النظريات الفقهية (نظرية الضمان)</option>
+<option value="129">ف.ص6330 تخريج الفروع على الأصول</option>
+<option value="130">ف.ص6340 الاجتهاد والفتوى</option>
+<option value="131">ف.ص6370 القواعد الفقهية المقارنة</option>
+<option value="132">ف.ص6350 مقاصد الشريعة (متقدم)</option>
+<option value="133">ف.ص6230 الفقه المقارن</option>
+<option value="134">ف.ص6210 المعاملات المصرفية الإسلامية</option>
+<option value="135">ف.ص6240 التشريع الجنائي الإسلامي</option>
+<option value="136">ف.ص6250 القانون الدولي العام مقارنًا بالفقه الإسلامي</option>
+<option value="137">ف.ص6120 اقتصاديات الزكاة والأوقاف</option>
+<option value="138">ف.ص6410 الاقتصاد الإسلامي الجزئي</option>
+<option value="139">ف.ص6350 مقاصد الشريعة (متقدم)</option>
+<option value="140">ف.ص6210 النظرية النقدية والمصرفية في الإسلام</option>
+<option value="141">ف.ص6420 الاقتصاد الإسلامي الكلي</option>
+<option value="142">ف.ص6430 الاقتصاد القياسي</option>
+<option value="143">ف.ص6440 النظم الاقتصادية المقارنة</option>
+<option value="144">ف.ص6230 الشركات في الفقه الإسلامي</option>
+<option value="145">ف.ص6450 المعاملات المصرفية في الإسلام</option>
+<option value="146">ف.ص6220 قضايا فقهية اقتصادية معاصرة</option>
+<option value="147">ف.ص6460 التنمية الاقتصادية في الإسلام</option>
+<option value="148">ع.ش6120 اقتصاديات الزكاة والأوقاف</option>
+<option value="149">ش.أ 310 فقه الجنايات</option>
+</select>
+</div>
+<div class="wide"><label for="percent">نسبة تنفيذ الخطة الدراسية حتى نهاية الأسبوع العاشر <span class="required" aria-hidden="true">*</span></label><select id="percent" name="percent" aria-describedby="percent-help" required><option value="">اختر النسبة</option>
+<option value="1">1%</option>
+<option value="2">2%</option>
+<option value="3">3%</option>
+<option value="4">4%</option>
+<option value="5">5%</option>
+<option value="6">6%</option>
+<option value="7">7%</option>
+<option value="8">8%</option>
+<option value="9">9%</option>
+<option value="10">10%</option>
+<option value="11">11%</option>
+<option value="12">12%</option>
+<option value="13">13%</option>
+<option value="14">14%</option>
+<option value="15">15%</option>
+<option value="16">16%</option>
+<option value="17">17%</option>
+<option value="18">18%</option>
+<option value="19">19%</option>
+<option value="20">20%</option>
+<option value="21">21%</option>
+<option value="22">22%</option>
+<option value="23">23%</option>
+<option value="24">24%</option>
+<option value="25">25%</option>
+<option value="26">26%</option>
+<option value="27">27%</option>
+<option value="28">28%</option>
+<option value="29">29%</option>
+<option value="30">30%</option>
+<option value="31">31%</option>
+<option value="32">32%</option>
+<option value="33">33%</option>
+<option value="34">34%</option>
+<option value="35">35%</option>
+<option value="36">36%</option>
+<option value="37">37%</option>
+<option value="38">38%</option>
+<option value="39">39%</option>
+<option value="40">40%</option>
+<option value="41">41%</option>
+<option value="42">42%</option>
+<option value="43">43%</option>
+<option value="44">44%</option>
+<option value="45">45%</option>
+<option value="46">46%</option>
+<option value="47">47%</option>
+<option value="48">48%</option>
+<option value="49">49%</option>
+<option value="50">50%</option>
+<option value="51">51%</option>
+<option value="52">52%</option>
+<option value="53">53%</option>
+<option value="54">54%</option>
+<option value="55">55%</option>
+<option value="56">56%</option>
+<option value="57">57%</option>
+<option value="58">58%</option>
+<option value="59">59%</option>
+<option value="60">60%</option>
+<option value="61">61%</option>
+<option value="62">62%</option>
+<option value="63">63%</option>
+<option value="64">64%</option>
+<option value="65">65%</option>
+<option value="66">66%</option>
+<option value="67">67%</option>
+<option value="68">68%</option>
+<option value="69">69%</option>
+<option value="70">70%</option>
+<option value="71">71%</option>
+<option value="72">72%</option>
+<option value="73">73%</option>
+<option value="74">74%</option>
+<option value="75">75%</option>
+<option value="76">76%</option>
+<option value="77">77%</option>
+<option value="78">78%</option>
+<option value="79">79%</option>
+<option value="80">80%</option>
+<option value="81">81%</option>
+<option value="82">82%</option>
+<option value="83">83%</option>
+<option value="84">84%</option>
+<option value="85">85%</option>
+<option value="86">86%</option>
+<option value="87">87%</option>
+<option value="88">88%</option>
+<option value="89">89%</option>
+<option value="90">90%</option>
+</select><small id="percent-help">اختر نسبة من 1% إلى 90%. النسبة المتوقعة حسب التوصيف 66% تقريبًا.</small></div>
+<div class="wide"><label for="reason">مبررات التأخر في تنفيذ الخطة الدراسية <small>اختياري</small></label><textarea id="reason" name="reason" rows="4" maxlength="2000"></textarea></div>
+</div>
+<input type="hidden" name="submissionId" id="submission-id">
+<div hidden><input name="website" aria-label="اترك هذا الحقل فارغًا" tabindex="-1" autocomplete="off"></div>
+<p id="status" role="status"></p>
+<button type="submit" id="send" disabled>إرسال الاستمارة</button>
+<noscript><p>يلزم تفعيل JavaScript لإرسال الاستمارة.</p></noscript>
+</form>
+<footer>متابعة تنفيذ الخطة الدراسية · ربيع 2024</footer>
+</main>
+<script>
+const endpoint = ''; // ألصق هنا رابط نشر تطبيق Apps Script المنتهي بـ /exec
+const form = document.getElementById('report');
+const send = document.getElementById('send');
+const status = document.getElementById('status');
+const submissionId = document.getElementById('submission-id');
+const course = document.getElementById('course');
+const search = document.getElementById('course-search');
+const count = document.getElementById('course-count');
+const placeholder = course.options[0];
+const options = Array.from(course.options).slice(1);
+const normalize = value => value.normalize('NFKC').replace(/[\u064b-\u065f\u0670ـ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/[٠-٩۰-۹]/g, digit => String(digit.charCodeAt(0) & 15)).replace(/[.\s-]/g, '').toLowerCase();
+function filterCourses() {
+  const selected = course.value;
+  const query = normalize(search.value);
+  const matches = options.filter(option => normalize(option.textContent).includes(query));
+  const visible = options.filter(option => option.value === selected || matches.includes(option));
+  course.replaceChildren(placeholder, ...visible);
+  course.value = selected;
+  count.textContent = query
+    ? (matches.length ? 'عدد النتائج: ' + matches.length : 'لا توجد نتائج مطابقة. جرّب اسمًا أو رمزًا آخر.')
+    : 'عدد الخيارات: ' + options.length;
+}
+search.addEventListener('input', filterCourses);
+course.addEventListener('change', filterCourses);
+filterCourses();
+const configured = /^https:\/\/script\.google\.com\/(?:a\/macros\/[^/]+\/|macros\/)s\/[-\w]+\/exec$/.test(endpoint);
+if (configured && globalThis.crypto?.randomUUID) {
+  form.action = endpoint;
+  submissionId.value = crypto.randomUUID();
+  send.disabled = false;
+} else {
+  status.textContent = 'معاينة الاستمارة. يتاح الإرسال بعد تفعيل الربط على الصفحة المنشورة.';
+}
+form.addEventListener('submit', event => {
+  if (!configured || !submissionId.value) {
+    event.preventDefault();
+    return;
+  }
+  send.disabled = true;
+  status.textContent = 'جارٍ إرسال الاستمارة…';
+});
+window.addEventListener('pageshow', () => {
+  if (configured && submissionId.value) {
+    send.disabled = false;
+    status.textContent = '';
+  }
+});
+</script>
+</body>
+</html>
