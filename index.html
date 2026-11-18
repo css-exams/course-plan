@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>نسبة تنفيذ الخطة الدراسية | كلية العلوم الشرعية</title>
+<title>متابعة تنفيذ الخطة الدراسية | كلية العلوم الشرعية</title>
 <style>
 :root{font-family:Tahoma,Arial,sans-serif;color:#172e28;background:#f3f6f3;line-height:1.65;--green:#164e3e;--muted:#455952;--line:#bccbc3}
 *{box-sizing:border-box}
@@ -15,11 +15,6 @@ header{background:var(--green);color:#fff;padding:2.6rem 0 2.8rem;border-block-e
 h1{font-size:clamp(1.65rem,5vw,2.55rem);line-height:1.35;margin:.45rem 0}
 header p{margin:.4rem 0 0}
 main{padding-block:1.5rem 3rem}
-.summary{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.summary div{background:#fff;padding:.9rem 1.1rem}
-.summary strong,.summary span{display:block}
-.summary strong{color:var(--green);font-size:1.2rem}
-.summary span,small{color:var(--muted)}
 details{margin:1rem 0;padding:.65rem 1rem;background:#e9f0eb;border-radius:10px}
 summary{cursor:pointer;font-weight:bold}
 ul{padding-inline-start:1.3rem}
@@ -31,35 +26,43 @@ h2{font-size:1.35rem;margin:0 0 .2rem}
 label{display:block;font-weight:bold;margin-block-end:.27rem}
 input,select,textarea,button{font:inherit}
 input,select,textarea{display:block;width:100%;min-width:0;min-height:46px;color:inherit;background:#fff;border:1px solid #788f82;border-radius:8px;padding:.55rem .7rem}
-textarea{resize:vertical}
+.completion{min-width:0;margin:0;padding:.6rem .85rem .8rem;border:1px solid #bccbc3;border-radius:8px}
+.completion legend{padding-inline:.3rem;font-weight:bold}
+.completion label{display:flex;align-items:center;gap:.6rem;min-height:44px;margin:0;cursor:pointer}
+.completion-followup{margin-top:.55rem}
+.completion-followup label{display:block;min-height:0;margin-bottom:.27rem;cursor:default}
+.completion-followup textarea{resize:vertical}
+#delay-reason-field{margin-top:.85rem}
+.completion input{inline-size:1.15rem;block-size:1.15rem;min-height:0;margin:0;accent-color:var(--green);flex:none}
+.course-picker{position:relative}
+.course-picker input{padding-inline-end:3.3rem}
+.course-toggle{position:absolute;inset-block-start:0;inset-inline-end:0;width:2.9rem;min-height:46px;padding:0;background:transparent;color:var(--green)}
+.course-options{position:absolute;z-index:2;inset-inline:0;margin:.2rem 0 0;padding:.2rem;max-height:17rem;overflow:auto;overscroll-behavior:contain;list-style:none;background:white;border:1px solid #788f82;border-radius:8px;box-shadow:0 6px 18px #172e2826}
+.course-options li{padding:.55rem .7rem;overflow-wrap:anywhere;cursor:pointer}
+.course-options li:hover,.course-options li[aria-selected="true"]{background:#dcebe0}
+.course-empty{position:absolute;z-index:2;inset-inline:0;margin:.2rem 0 0;padding:.6rem .8rem;background:white;border:1px solid #788f82;border-radius:8px}
 small{display:block;margin:.25rem 0}
 button{min-height:46px;padding:.55rem 1.3rem;border:0;border-radius:8px;background:var(--green);color:white;font-weight:bold;cursor:pointer}
 button:disabled{opacity:.65;cursor:default}
 :focus-visible{outline:3px solid #28684c;outline-offset:3px}
 #status:not(:empty){background:#fff5db;padding:.65rem .8rem;border-radius:8px}
-footer{margin-top:1.25rem;color:var(--muted);font-size:.9rem}
-@media(max-width:600px){.grid{grid-template-columns:minmax(0,1fr)}header{padding:1.8rem 0}.summary strong{font-size:1rem}}
+@media(max-width:600px){.grid{grid-template-columns:minmax(0,1fr)}header{padding:1.8rem 0}}
 </style>
 </head>
 <body>
 <header>
 <div class="wrap">
 <p class="brand">كلية العلوم الشرعية</p>
-<h1>نسبة تنفيذ الخطة الدراسية للمقرر</h1>
-<p>حتى نهاية الأسبوع العاشر · ربيع 2024</p>
+<h1>متابعة تنفيذ الخطة الدراسية للمقرر</h1>
+<p>حتى نهاية الأسبوع العاشر</p>
 </div>
 </header>
 <main class="wrap">
-<section class="summary" aria-label="بيانات المتابعة">
-<div><span>النسبة المتوقعة حتى الأسبوع العاشر</span><strong>66% تقريبًا</strong></div>
-<div><span>آخر موعد في النموذج الأصلي</span><strong>الأحد 21 أبريل 2024</strong></div>
-</section>
 <details open>
 <summary>تعليمات تعبئة الاستمارة</summary>
 <ul>
-<li>يُفضّل إدخال بريد كلية العلوم الشرعية. تُرسل نسخة من البيانات إلى البريد الذي تدخله.</li>
+<li>يُفضّل إدخال بريد كلية العلوم الشرعية.</li>
 <li>إذا كنت تُدرّس أكثر من مقرر، فعبّئ استمارة مستقلة لكل مقرر.</li>
-<li>تُحسب النسبة من جملة مفردات المقرر. تمثل نسبة 100% تنفيذ المقرر كاملًا.</li>
 </ul>
 </details>
 <form id="report" method="post" accept-charset="UTF-8" aria-labelledby="form-title">
@@ -71,11 +74,16 @@ footer{margin-top:1.25rem;color:var(--muted);font-size:.9rem}
 <div><label for="department">القسم <span class="required" aria-hidden="true">*</span></label><select id="department" name="department" required><option value="">اختر القسم</option><option>أصول الدين</option><option>الفقه وأصوله</option><option>المتطلبات العامة</option></select></div>
 <div><label for="date">التاريخ <span class="required" aria-hidden="true">*</span></label><input id="date" name="date" type="date" required></div>
 <div class="wide">
-<label for="course-search">البحث في المقررات</label>
-<input id="course-search" type="search" aria-controls="course" placeholder="اكتب اسم المقرر أو رمزه">
-<small id="course-count" role="status"></small>
 <label for="course">اسم المقرر <span class="required" aria-hidden="true">*</span></label>
-<select id="course" name="course" required><option value="">اختر المقرر</option>
+<div class="course-picker" id="course-picker">
+<input id="course" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="course-options" autocomplete="off" placeholder="اختر المقرر أو اكتب اسمه أو رمزه" required>
+<button class="course-toggle" id="course-toggle" type="button" tabindex="-1" aria-label="إظهار قائمة المقررات" aria-controls="course-options" aria-expanded="false">▾</button>
+<ul id="course-options" class="course-options" role="listbox" aria-label="المقررات" hidden></ul>
+<p id="course-empty" class="course-empty" role="status" hidden>لا توجد مقررات مطابقة.</p>
+</div>
+<input type="hidden" name="course" id="course-value">
+<template id="courses">
+<select>
 <option value="1">ص.د2101 - القرآن الكريم 1</option>
 <option value="2">ص.د2102 - القرآن الكريم 2</option>
 <option value="3">ص.د2103 - القرآن الكريم 3</option>
@@ -226,100 +234,23 @@ footer{margin-top:1.25rem;color:var(--muted);font-size:.9rem}
 <option value="148">ع.ش6120 اقتصاديات الزكاة والأوقاف</option>
 <option value="149">ش.أ 310 فقه الجنايات</option>
 </select>
+</template>
 </div>
-<div class="wide"><label for="percent">نسبة تنفيذ الخطة الدراسية حتى نهاية الأسبوع العاشر <span class="required" aria-hidden="true">*</span></label><select id="percent" name="percent" aria-describedby="percent-help" required><option value="">اختر النسبة</option>
-<option value="1">1%</option>
-<option value="2">2%</option>
-<option value="3">3%</option>
-<option value="4">4%</option>
-<option value="5">5%</option>
-<option value="6">6%</option>
-<option value="7">7%</option>
-<option value="8">8%</option>
-<option value="9">9%</option>
-<option value="10">10%</option>
-<option value="11">11%</option>
-<option value="12">12%</option>
-<option value="13">13%</option>
-<option value="14">14%</option>
-<option value="15">15%</option>
-<option value="16">16%</option>
-<option value="17">17%</option>
-<option value="18">18%</option>
-<option value="19">19%</option>
-<option value="20">20%</option>
-<option value="21">21%</option>
-<option value="22">22%</option>
-<option value="23">23%</option>
-<option value="24">24%</option>
-<option value="25">25%</option>
-<option value="26">26%</option>
-<option value="27">27%</option>
-<option value="28">28%</option>
-<option value="29">29%</option>
-<option value="30">30%</option>
-<option value="31">31%</option>
-<option value="32">32%</option>
-<option value="33">33%</option>
-<option value="34">34%</option>
-<option value="35">35%</option>
-<option value="36">36%</option>
-<option value="37">37%</option>
-<option value="38">38%</option>
-<option value="39">39%</option>
-<option value="40">40%</option>
-<option value="41">41%</option>
-<option value="42">42%</option>
-<option value="43">43%</option>
-<option value="44">44%</option>
-<option value="45">45%</option>
-<option value="46">46%</option>
-<option value="47">47%</option>
-<option value="48">48%</option>
-<option value="49">49%</option>
-<option value="50">50%</option>
-<option value="51">51%</option>
-<option value="52">52%</option>
-<option value="53">53%</option>
-<option value="54">54%</option>
-<option value="55">55%</option>
-<option value="56">56%</option>
-<option value="57">57%</option>
-<option value="58">58%</option>
-<option value="59">59%</option>
-<option value="60">60%</option>
-<option value="61">61%</option>
-<option value="62">62%</option>
-<option value="63">63%</option>
-<option value="64">64%</option>
-<option value="65">65%</option>
-<option value="66">66%</option>
-<option value="67">67%</option>
-<option value="68">68%</option>
-<option value="69">69%</option>
-<option value="70">70%</option>
-<option value="71">71%</option>
-<option value="72">72%</option>
-<option value="73">73%</option>
-<option value="74">74%</option>
-<option value="75">75%</option>
-<option value="76">76%</option>
-<option value="77">77%</option>
-<option value="78">78%</option>
-<option value="79">79%</option>
-<option value="80">80%</option>
-<option value="81">81%</option>
-<option value="82">82%</option>
-<option value="83">83%</option>
-<option value="84">84%</option>
-<option value="85">85%</option>
-<option value="86">86%</option>
-<option value="87">87%</option>
-<option value="88">88%</option>
-<option value="89">89%</option>
-<option value="90">90%</option>
-</select><small id="percent-help">اختر نسبة من 1% إلى 90%. النسبة المتوقعة حسب التوصيف 66% تقريبًا.</small></div>
-<div class="wide"><label for="reason">مبررات التأخر في تنفيذ الخطة الدراسية <small>اختياري</small></label><textarea id="reason" name="reason" rows="4" maxlength="2000"></textarea></div>
+<fieldset class="wide completion">
+<legend>هل أُنجزت جميع الموضوعات المقررة في خطة تدريس المقرر حتى نهاية الأسبوع العاشر؟ <span class="required" aria-hidden="true">*</span></legend>
+<label for="completion-yes"><input id="completion-yes" name="completion" type="radio" value="yes" required> نعم، أُنجزت جميع الموضوعات المقررة.</label>
+<label for="completion-no"><input id="completion-no" name="completion" type="radio" value="no" required> لا، هناك تأخّر في تنفيذ الخطة.</label>
+<div class="completion-followup" id="completion-followup" hidden>
+<label for="last-completed-week">ما آخر أسبوع اكتملت موضوعاته وفق الخطة؟ <span class="required" aria-hidden="true">*</span></label>
+<select id="last-completed-week" name="lastCompletedWeek" disabled>
+<option value="">اختر آخر أسبوع مكتمل</option>
+</select>
+<div id="delay-reason-field" hidden>
+<label for="delay-reason">مبررات التأخر، إن وجدت <small>اختياري</small></label>
+<textarea id="delay-reason" name="delayReason" rows="3" maxlength="2000" disabled></textarea>
+</div>
+</div>
+</fieldset>
 </div>
 <input type="hidden" name="submissionId" id="submission-id">
 <div hidden><input name="website" aria-label="اترك هذا الحقل فارغًا" tabindex="-1" autocomplete="off"></div>
@@ -327,34 +258,158 @@ footer{margin-top:1.25rem;color:var(--muted);font-size:.9rem}
 <button type="submit" id="send" disabled>إرسال الاستمارة</button>
 <noscript><p>يلزم تفعيل JavaScript لإرسال الاستمارة.</p></noscript>
 </form>
-<footer>متابعة تنفيذ الخطة الدراسية · ربيع 2024</footer>
 </main>
 <script>
 const endpoint = ''; // ألصق هنا رابط نشر تطبيق Apps Script المنتهي بـ /exec
 const form = document.getElementById('report');
+const completionChoices = form.querySelectorAll('input[name="completion"]');
+const followup = document.getElementById('completion-followup');
+const lastCompletedWeek = document.getElementById('last-completed-week');
+const delayReasonField = document.getElementById('delay-reason-field');
+const delayReason = document.getElementById('delay-reason');
+const weekChoices = {
+  no: [['7_or_earlier', 'الأسبوع السابع أو قبله'], ['8', 'الأسبوع الثامن'], ['9', 'الأسبوع التاسع']],
+  yes: [['10', 'الأسبوع العاشر'], ['11', 'الأسبوع الحادي عشر'], ['12_or_later', 'الأسبوع الثاني عشر أو بعده']]
+};
+
+function updateWeekChoices() {
+  const status = form.querySelector('input[name="completion"]:checked')?.value;
+  const choices = weekChoices[status] || [];
+  const previous = lastCompletedWeek.value;
+  lastCompletedWeek.replaceChildren(
+    new Option('اختر آخر أسبوع مكتمل', ''),
+    ...choices.map(([value, label]) => new Option(label, value))
+  );
+  lastCompletedWeek.value = choices.some(([value]) => value === previous) ? previous : '';
+  followup.hidden = !choices.length;
+  lastCompletedWeek.disabled = !choices.length;
+  lastCompletedWeek.required = !!choices.length;
+  const delayed = status === 'no';
+  delayReasonField.hidden = !delayed;
+  delayReason.disabled = !delayed;
+}
+
+completionChoices.forEach(choice => choice.addEventListener('change', updateWeekChoices));
+window.addEventListener('pageshow', updateWeekChoices);
+updateWeekChoices();
 const send = document.getElementById('send');
 const status = document.getElementById('status');
 const submissionId = document.getElementById('submission-id');
 const course = document.getElementById('course');
-const search = document.getElementById('course-search');
-const count = document.getElementById('course-count');
-const placeholder = course.options[0];
-const options = Array.from(course.options).slice(1);
+const courseValue = document.getElementById('course-value');
+const picker = document.getElementById('course-picker');
+const toggle = document.getElementById('course-toggle');
+const list = document.getElementById('course-options');
+const empty = document.getElementById('course-empty');
 const normalize = value => value.normalize('NFKC').replace(/[\u064b-\u065f\u0670ـ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/[٠-٩۰-۹]/g, digit => String(digit.charCodeAt(0) & 15)).replace(/[.\s-]/g, '').toLowerCase();
-function filterCourses() {
-  const selected = course.value;
-  const query = normalize(search.value);
-  const matches = options.filter(option => normalize(option.textContent).includes(query));
-  const visible = options.filter(option => option.value === selected || matches.includes(option));
-  course.replaceChildren(placeholder, ...visible);
-  course.value = selected;
-  count.textContent = query
-    ? (matches.length ? 'عدد النتائج: ' + matches.length : 'لا توجد نتائج مطابقة. جرّب اسمًا أو رمزًا آخر.')
-    : 'عدد الخيارات: ' + options.length;
+const options = Array.from(document.getElementById('courses').content.querySelectorAll('option'), option => ({
+  value: option.value,
+  label: option.textContent,
+  search: normalize(option.textContent)
+}));
+let matches = [];
+let active = -1;
+let expanded = false;
+
+function validateCourse() {
+  course.setCustomValidity(course.value && !courseValue.value ? 'اختر مقررًا من القائمة.' : '');
 }
-search.addEventListener('input', filterCourses);
-course.addEventListener('change', filterCourses);
-filterCourses();
+
+function showCourses(query) {
+  const term = normalize(query);
+  matches = options.filter(option => option.search.includes(term));
+  const items = matches.map(option => {
+    const item = document.createElement('li');
+    item.id = 'course-option-' + option.value;
+    item.dataset.value = option.value;
+    item.setAttribute('role', 'option');
+    item.setAttribute('aria-selected', 'false');
+    item.textContent = option.label;
+    return item;
+  });
+  list.replaceChildren(...items);
+  list.scrollTop = 0;
+  active = -1;
+  expanded = true;
+  list.hidden = !matches.length;
+  empty.hidden = !!matches.length;
+  course.setAttribute('aria-expanded', String(!!matches.length));
+  toggle.setAttribute('aria-expanded', String(!!matches.length));
+  toggle.setAttribute('aria-label', 'إغلاق قائمة المقررات');
+  course.removeAttribute('aria-activedescendant');
+}
+
+function closeCourses() {
+  expanded = false;
+  list.hidden = true;
+  empty.hidden = true;
+  course.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'إظهار قائمة المقررات');
+  course.removeAttribute('aria-activedescendant');
+}
+
+function activateCourse(index) {
+  if (!matches.length) return;
+  if (active >= 0) list.children[active].setAttribute('aria-selected', 'false');
+  active = Math.max(0, Math.min(matches.length - 1, index));
+  const item = list.children[active];
+  item.setAttribute('aria-selected', 'true');
+  course.setAttribute('aria-activedescendant', item.id);
+  item.scrollIntoView({block: 'nearest'});
+}
+
+function chooseCourse(option) {
+  course.value = option.label;
+  courseValue.value = option.value;
+  validateCourse();
+  course.focus();
+  closeCourses();
+}
+
+course.addEventListener('input', () => {
+  courseValue.value = '';
+  validateCourse();
+  showCourses(course.value);
+});
+course.addEventListener('click', () => {
+  if (!expanded) showCourses(courseValue.value ? '' : course.value);
+});
+toggle.addEventListener('click', () => {
+  course.focus();
+  if (expanded) closeCourses();
+  else showCourses('');
+});
+course.addEventListener('keydown', event => {
+  if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+    event.preventDefault();
+    if (!expanded) showCourses(courseValue.value ? '' : course.value);
+    const step = event.key === 'ArrowDown' ? 1 : -1;
+    activateCourse(active < 0 && step < 0 ? matches.length - 1 : active + step);
+  } else if (event.key === 'Enter' && expanded && active >= 0) {
+    event.preventDefault();
+    chooseCourse(matches[active]);
+  } else if (event.key === 'Escape' && expanded) {
+    event.preventDefault();
+    closeCourses();
+  }
+});
+list.addEventListener('pointerdown', event => {
+  if (event.pointerType === 'mouse' && event.target.closest('[data-value]')) {
+    event.preventDefault();
+  }
+});
+list.addEventListener('click', event => {
+  const item = event.target.closest('[data-value]');
+  if (item) chooseCourse(matches.find(option => option.value === item.dataset.value));
+});
+picker.addEventListener('focusout', event => {
+  if (event.relatedTarget && !picker.contains(event.relatedTarget)) closeCourses();
+});
+document.addEventListener('click', event => {
+  if (!picker.contains(event.target)) closeCourses();
+});
+validateCourse();
 const configured = /^https:\/\/script\.google\.com\/(?:a\/macros\/[^/]+\/|macros\/)s\/[-\w]+\/exec$/.test(endpoint);
 if (configured && globalThis.crypto?.randomUUID) {
   form.action = endpoint;
